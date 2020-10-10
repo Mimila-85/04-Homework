@@ -190,10 +190,11 @@ viewScores.addEventListener("click", function highScorePage(){
     buttonClear.textContent = "Clear Scores";  
     viewHighScores.appendChild(buttonClear); 
     
+    // Clear local storage and highScoreList.
     document.querySelector(".buttonClear").addEventListener("click", function(){
-        localStorage.clear();
-        // Clear highScoreList.
+        localStorage.clear();        
         highScoreList.textContent = "";
+        highScoreArray = [{initials:[],userScore:[]}];
     } )
 
 })
