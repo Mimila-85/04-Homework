@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Quiz</title>
+
+     <!-- Link to Bootstrap style sheet-->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+            
+     <!-- Link to favicon-->
+     <link rel="icon" type="image/x-icon" href="./assets/images/quiz.png">
+ 
+     <!-- Link to Google fonts -->
+     <!-- <link href="https://fonts.googleapis.com/css2?family=Coiny&family=Kurale&display=swap" rel="stylesheet"> -->
+ 
+     <!-- Link to my style sheet-->
+     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+</head>
+<body>
+    <!-- Navbar from Bootstrap with an Image and text -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand">
+        <img src="./assets/images/quiz.png" width="30" height="30" class="d-inline-block align-top" alt="Question Face" loading="lazy">
+        Code Quiz
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+            <a class="nav-link viewScores" href="#">View High Scores</a>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <article class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <p class="timer">Time Left:
+                        <span id="seconds"></span>
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="jumbotron">
+                        <div class="start">
+                            <h1 class="display-4">Check Your Knowledge</h1>
+                            <div class="btn btn-primary btn-lg button startBtn">Start</div>                           
+                        </div>
+                        <div class="quiz">
+                            <h1 class="display-4">Check Your Knowledge</h1>
+                            <p class="question"></p>
+                            <ul id="options"></ul>
+                            <!-- Thematic break between the question and the result -->
+                            <hr class="my-4">
+                            <p id="result"></p>
+                        </div>
+                        <div class="showScore">
+                            <h1 class="display-4 h1"></h1>
+                            <p id="finalResult"></p>
+                            <form class="highScore" method="POST">
+                            <p id="submitScore"></p>                                
+                            </form>
+                        </div>
+                        <div class="viewHighScores">
+                            <h1 class="display-4 h1ViewScores"></h1>
+                            <ul id="highScoreList"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
