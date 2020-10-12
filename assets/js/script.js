@@ -173,6 +173,9 @@ viewScores.addEventListener("click", function highScorePage(){
         start.style.display = "block";
     });
 
+    // Clear highScoreList element.
+    highScoreList.textContent = "";
+
     // Render a new li for each new stored initial and score.
     for (var i = 0; i < highScoreArray[0].initials.length; i++) {
         var newHighScore = highScoreArray[0].userScore[i];
@@ -214,8 +217,10 @@ function timer() {
     },1000);
 }
 
+
 // Function created to place a Game Over picture when the user does not have time to finish the quiz.
 function gameOver() {
+    result.textContent = "Sorry, time is out! Go to View High Score to see previous scores and restart quiz.";
     var imgGameOver = document.createElement("img");
 
     imgGameOver.setAttribute("src", "./assets/images/game_over.png");
@@ -229,7 +234,7 @@ function displayQuestions(){
     
     // Clear options list to each time users go to a new question.
     options.innerHTML = "";
-
+    
     // Variable created to take a question from questions object according to the current question index number. 
     var displayQ = questions[currentQuestion].q;
     // Display current question to the user.
@@ -269,6 +274,10 @@ options.addEventListener("click", function(event){
         var selectedAnswer = element.parentElement.getAttribute("data");
         console.log(selectedAnswer);
 
+        if(secondsLeft === 0 || currentQuestion >= questions.length){
+            return;
+        }
+
         // If the answer clicked match with the correct answer in the object increases score by one, and currentQuestion index by one as well, displaying the next question after click.
         if (selectedAnswer === questions[currentQuestion].correct){
             score++;
@@ -292,10 +301,10 @@ options.addEventListener("click", function(event){
         if (currentQuestion < questions.length){
             var index = element.parentElement.getAttribute("data-index");
             displayAArray.splice(index, 4);
-
             displayQuestions();
         }
-        else{
+        
+        else {
             showScore.style.display = "block";
             finalScore();
         }
@@ -309,7 +318,7 @@ function finalScore(){
     // Place h1 and paragraph text content to be display on div class score.
     h1.textContent = "Check Your Results";
     finalResult.textContent = "Your final score is " + score + ".";
-    submitScore.textContent = "Type your initials below and press enter to submit.";
+    submitScore.textContent = "Type your initials below and press enter to submit. Go to View High Score to see previous scores and restart quiz.";
 
     // Create an input tag on html and sets its attributes.
     var inputInitials = document.createElement("input");
