@@ -9,7 +9,7 @@ At the end on the quiz user is presented with final score and the ability to sav
 At any time, user can click on the link “View High Scores” to access the saved scores. There the user can clean the saved scores, and or restart the quiz.
 
 ## Link
-[Code Quiz](https://mimila-85.github.io/04-Homework/#)
+[Code Quiz](https://mimila-85.github.io/Code-Quiz/)
 
 ## Visual Representation
 This is how users sees the page for the first time:
